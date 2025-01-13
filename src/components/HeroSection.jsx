@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
+import duilogo from "../assets/DUI-logo.png"
 
 const navigation = [
   { name: "Components", href: "#" },
@@ -19,7 +20,7 @@ export default function Example() {
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
             <a className="">
-              <img alt="" src="src\assets\DUI-logo.png" className="h-10 w-auto" />
+              <img alt="" src={duilogo} className="h-10 w-auto" />
             </a>
           </div>
           <div className="flex lg:hidden">

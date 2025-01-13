@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import TemplatesImg from "../assets/TemplatesHero3.png";
+import duilogo from "../assets/DUI-logo.png"
 
 const TemplatesLandingPage = () => {
   return (
@@ -9,7 +10,7 @@ const TemplatesLandingPage = () => {
           <div className="flex items-center justify-between h-16 lg:h-20">
             <div className="flex-shrink-0">
               <a href="#" title="" className="flex">
-                <img className="w-18 h-10 color-black text-black" src="src\assets\DUI-logo.png" alt="Logo" />
+                <img className="w-18 h-10 color-black text-black" src={duilogo} alt="Logo" />
               </a>
             </div>
 

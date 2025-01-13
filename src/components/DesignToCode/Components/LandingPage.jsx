@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import FeatureSection from "./FeaturesSection";
 import duilogo from "../../../assets/DUI-logo.png";
+import heroimg from "../../../assets/HeroImage3.png"
 
 const ComponentName = () => {
   const [expanded, setExpanded] = useState(false);
@@ -194,7 +195,7 @@ const ComponentName = () => {
           </div>
         </div>
         {/* <p className="mt-8 text-base text-gray-500 font-inter">60 Days free trial · No credit card required</p> */}
-        <img className="w-[480px] font-Epilogue ml-20" src="src\assets\HeroImage3.png"></img>
+        <img className="w-[480px] font-Epilogue ml-20" src={heroimg}></img>
       </section>
       <FeatureSection />
     </div>
