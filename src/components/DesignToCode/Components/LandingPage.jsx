@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import FeatureSection from "./FeaturesSection";
+import duilogo from "../../../assets/DUI-logo.png";
 
 const ComponentName = () => {
   const [expanded, setExpanded] = useState(false);
@@ -16,7 +17,7 @@ const ComponentName = () => {
                 title=""
                 className="flex rounded outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
               >
-                <img className="w-18 h-10 color-black" src="src\assets\DUI-logo.png" alt="Logo" />
+                <img className="w-18 h-10 color-black" src={duilogo} alt="Logo" />
               </a>
             </div>
 
@@ -24,7 +25,7 @@ const ComponentName = () => {
               <button
                 type="button"
                 className="text-gray-900"
-                onClick={() => setExpanded(!expanded)} // Toggle the expanded state
+                onClick={() => setExpanded(!expanded)} 
                 aria-expanded={expanded}
               >
                 <span aria-hidden="true" style={{ display: expanded ? "none" : "inline" }}>
