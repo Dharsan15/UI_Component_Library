@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { userContext } from "../UserContext/UserContext";
+import duilogo from "../assets/DUI-logo.png"
 
 export default function Login() {
   const { userName, setUserName } = useContext(userContext);
@@ -71,7 +72,7 @@ export default function Login() {
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img alt="Your Company" src="src\assets\DUI-logo.png" className="mx-auto h-10 w-auto" />
+          <img alt="Your Company" src={duilogo} className="mx-auto h-10 w-auto" />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account
           </h2>
