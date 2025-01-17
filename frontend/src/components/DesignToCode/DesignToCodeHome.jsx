@@ -10,25 +10,25 @@ const WelcomePage = () => {
   const { userName, setUserName } = useContext(userContext);
   //  const[username , setusername] = useState("");
 
-  useEffect( ()=> {
+  // useEffect( ()=> {
 
-    async function fetchdata () {
-      const response = await axios.get("http://localhost:8000/api/users/me" , {
-        withCredentials: true
-       });
+  //   async function fetchdata () {
+  //     const response = await axios.get("https://65.2.35.245:3000/api/users/me" , {
+  //       withCredentials: true
+  //      });
   
-       const data = response.data;
+  //      const data = response.data;
   
-       console.log(data);
+  //      console.log(data);
        
   
-     //  setusername(data);
-    }
+  //    //  setusername(data);
+  //   }
 
-    fetchdata();
+  //   fetchdata();
 
     
-  },[])
+  // },[])
 
   return (
     <div>

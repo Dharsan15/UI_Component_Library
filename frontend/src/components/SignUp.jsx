@@ -69,7 +69,7 @@ function SignUp() {
     // } else {
 
       try {
-        await axios.post("http://localhost:8000/api/users/signup", user);
+        await axios.post("https://65.2.35.245:3000/api/users/signup", user);
         alert("Registration Successful");
         navigate("/components/Buttons")
       } catch (error) {

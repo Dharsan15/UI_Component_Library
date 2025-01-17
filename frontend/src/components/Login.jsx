@@ -45,7 +45,7 @@ export default function Login() {
 
     try {
 
-      const response = await axios.post("http://localhost:8000/api/users/login" , user);
+      const response = await axios.post("https://65.2.35.245:3000/api/users/login" , user);
       const data = response.data;
       console.log(data)
       const userExists = data.userId;
