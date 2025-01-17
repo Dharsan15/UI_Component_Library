@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -44,21 +44,18 @@ export default function Login() {
     }
 
     try {
-      const response = await axios.get("http://localhost:7000/login");
-      const datas = response.data;
-      const userExists = datas.some((data) => data.username === user.username);
+
+      const response = await axios.post("http://localhost:8000/api/users/login" , user);
+      const data = response.data;
+      console.log(data)
+      const userExists = data.userId;
 
       if (userExists) {
-        const isPasswordCorrect = datas.some(
-          (data) => data.username === user.username && data.password === user.password
-        );
-        if (isPasswordCorrect) {
-          alert("Login Successful");
+       {
           setUserName(user.username);
-          navigate("/components/Accordian");
-        } else {
-          alert("Invalid password");
-        }
+          console.log("logging from the login page" , user.username , userName);
+          navigate("/designtocode/dashboard");
+        } 
       } else {
         alert("User does not exist");
       }
@@ -67,6 +64,8 @@ export default function Login() {
       alert("An error occurred during login.");
     }
   };
+
+
 
   return (
     <>

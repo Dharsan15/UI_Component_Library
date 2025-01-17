@@ -1,10 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaCode, FaFolderOpen, FaProjectDiagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { userContext } from "../../UserContext/UserContext";
+import axios from "axios";
 
 const WelcomePage = () => {
-  const { userName } = useContext(userContext);
+
+
+  const { userName, setUserName } = useContext(userContext);
+  //  const[username , setusername] = useState("");
+
+  useEffect( ()=> {
+
+    async function fetchdata () {
+      const response = await axios.get("http://localhost:8000/api/users/me" , {
+        withCredentials: true
+       });
+  
+       const data = response.data;
+  
+       console.log(data);
+       
+  
+     //  setusername(data);
+    }
+
+    fetchdata();
+
+    
+  },[])
 
   return (
     <div>

@@ -8,6 +8,7 @@ import "prismjs/themes/prism-okaidia.css";
 
 import "../../custom-prism-theme.css";
 
+
 const uploadIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -22,6 +23,7 @@ const uploadIcon = (
 );
 
 const LoadingModal = () => (
+  
   <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
     <div className="flex items-center justify-center space-x-2">
       <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent border-solid rounded-full animate-spin"></div>
@@ -63,7 +65,7 @@ const FileUpload = () => {
 
     try {
       setIsLoading(true);
-      const response = await axios.post("http://localhost:3000/upload", formData, {
+      const response = await axios.post("http://localhost:8000/api/designtocode/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

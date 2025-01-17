@@ -44,21 +44,14 @@ export default function DesignToCodeLogin() {
     }
 
     try {
-      const response = await axios.get("http://localhost:7000/login");
+      const response = await axios.get("http://localhost:8000/api/users/login");
       const datas = response.data;
-      const userExists = datas.some((data) => data.username === user.username);
+      const userExists = datas.username;
 
       if (userExists) {
-        const isPasswordCorrect = datas.some(
-          (data) => data.username === user.username && data.password === user.password
-        );
-        if (isPasswordCorrect) {
           alert("Login Successful");
           setUserName(user.username);
           navigate("/designtocode/dashboard");
-        } else {
-          alert("Invalid password");
-        }
       } else {
         alert("User does not exist");
       }
